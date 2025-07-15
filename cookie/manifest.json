@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie推送插件",
+  "version": "1.1",
+  "description": "将指定网站的Cookie推送到指定接口，支持自定义域名配置",
+  "permissions": [
+    "cookies",
+    "tabs", 
+    "storage",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cookie推送插件配置"
+  },
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  }
+} 
